@@ -1,0 +1,23 @@
+{
+    "author": "shubho193",
+    "authorProfileUrl": "https://github.com/shubho193",
+    "category": 0,
+    "compatibleGameModes": [],
+    "configVersion": 1,
+    "dbOverrides": {},
+    "description": "Arcade-style car handling. Faster, speed-sensitive steering (full lock at low speed, 10 deg at ~125 km/h), more grip with a stable rear, downforce at speed, no launch wheelspin or tail sway, and drifts mainly from the handbrake. Bikes unchanged.",
+    "disabledByDefault": false,
+    "dominoAutoStart": [],
+    "donationUrl": "",
+    "friendlyId": "responsive_steering",
+    "game": "Nexus",
+    "incompatibleMods": [],
+    "luaAutoStart": [],
+    "minTntVersion": "",
+    "modProfileUrl": "https://github.com/shubho193/wd-responsive-steering",
+    "modsRecommendedBelowPriority": [],
+    "name": "Responsive Steering",
+    "packs": [],
+    "requiredMods": [],
+    "version": "1.0.0"
+}

@@ -1,0 +1,4 @@
+src/xml/
+src/changes.txt
+__pycache__/
+*.zip
