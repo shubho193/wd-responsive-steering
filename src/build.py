@@ -30,6 +30,7 @@ SPEED_SENSITIVE_STEER = True
 SPEED_LOW = 8.0                  # ~30 km/h
 SPEED_HIGH = 35.0                # ~125 km/h
 ANGLE_AT_HIGH = 10.0             # degrees of wheel angle at SPEED_HIGH
+LOW_SPEED_ANGLE_SCALE = 0.85     # fraction of fMaxAngle used below SPEED_LOW (1.0 = full lock)
 # Chassis yaw inertia (how sluggishly the body rotates). Vanilla 1.0 - 1.6.
 # 1.0 = physically "real" inertia; lower = more arcade-like rotation.
 CAR_YAW_INERTIA = 1.2
@@ -131,7 +132,7 @@ def patch_steering(xml, log):
                    f'{ind}<field name="bUseSpeedForMaxAngle" type="Boolean">True</field>\n'
                    f'{ind}<field name="fSpeedForMinSteerAngle" type="Float">{SPEED_LOW:g}</field>\n'
                    f'{ind}<field name="fSpeedForMaxSteerAngle" type="Float">{SPEED_HIGH:g}</field>\n'
-                   f'{ind}<field name="fSteerAngleAtMinSpeed" type="Float">{max_angle:g}</field>\n'
+                   f'{ind}<field name="fSteerAngleAtMinSpeed" type="Float">{round(max_angle * LOW_SPEED_ANGLE_SCALE, 2):g}</field>\n'
                    f'{ind}<field name="fSteerAngleAtMaxSpeed" type="Float">{min(ANGLE_AT_HIGH, max_angle):g}</field>\n'
                    f'{block.group(1)}</object>\n')
             o = o[:block.start()] + new + o[block.end():]
